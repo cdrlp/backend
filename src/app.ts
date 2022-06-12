@@ -1,7 +1,11 @@
 import express from 'express';
+import dotenv from 'dotenv';
 
 // routes
 import rootRoute from './router/root';
+
+// dotenv conf
+dotenv.config();
 
 // instances
 const app = express();
@@ -10,4 +14,6 @@ const app = express();
 app.use('/', rootRoute);
 
 // server starting
-app.listen(3000, () => console.log('servidor corriendo en el puerto 3000'));
+app.listen(process.env.PORT, () =>
+  console.log('servidor corriendo en el puerto ' + process.env.PORT)
+);
