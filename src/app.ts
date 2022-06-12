@@ -1,5 +1,8 @@
 import express from 'express';
 import dotenv from 'dotenv';
+import compresion from 'compression';
+import helmet from 'helmet';
+import cors from 'cors';
 
 // routes
 import rootRoute from './router/root';
@@ -9,6 +12,11 @@ dotenv.config();
 
 // instances
 const app = express();
+
+// middlewares
+app.use(compresion());
+app.use(helmet());
+app.use(cors());
 
 // routes configuration
 app.use('/', rootRoute);
