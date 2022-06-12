@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "baseUrl": "./src",
-    "outDir": "./bin",
+    "outDir": "./dist",
     "lib": ["es2021", "dom"],
     "module": "commonjs",
     "target": "es2021",

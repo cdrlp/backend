@@ -4,10 +4,13 @@
   "author": "EspinozaH",
   "license": "MIT",
   "scripts": {
-    "start": "yarn build && node bin/app.js",
+    "start": "node dist/app.js",
+    "start:clean": "yarn build && node dist/app.js",
+    "postinstall": "tsc",
     "start:dev": "nodemon src/app.ts",
-    "build": "rimraf ./bin && tsc",
-    "lint": "eslint . --ext .ts"
+    "build": "rimraf ./dist && tsc",
+    "lint": "eslint . --ext .ts",
+    "deploy": "git add . && git commit -m Heroku && git push heroku master"
   },
   "dependencies": {
     "express": "^4.18.1"
