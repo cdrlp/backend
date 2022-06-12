@@ -1,5 +1,5 @@
 {
-  "ignore": ["build", "node_modules"],
+  "ignore": ["bin", "node_modules", ".git"],
   "events": {
     "restart": "npm run lint"
   }

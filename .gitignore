@@ -80,9 +80,10 @@ web_modules/
 .next
 out
 
-# Nuxt.js build / generate output
+# generate output
 .nuxt
 dist
+bin
 
 # Gatsby files
 .cache/

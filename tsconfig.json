@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    "baseUrl": "./src",
+    "outDir": "./bin",
     "lib": ["es2021", "dom"],
     "module": "commonjs",
     "target": "es2021",
@@ -8,11 +10,12 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "moduleResolution": "node",
-    "rootDir": "src",
-    "outDir": "dist",
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
     "noImplicitAny": true,
     "resolveJsonModule": true
   },
+
   "include": ["src"],
   "exclude": ["dist", "node_modules"]
 }
