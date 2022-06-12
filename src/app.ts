@@ -4,6 +4,12 @@ import compresion from 'compression';
 import helmet from 'helmet';
 import cors from 'cors';
 
+// config
+import morganMiddleware from './config/morganMiddleware';
+
+// logger
+import Logger from './utils/logger';
+
 // routes
 import rootRoute from './router/root';
 
@@ -17,11 +23,12 @@ const app = express();
 app.use(compresion());
 app.use(helmet());
 app.use(cors());
+app.use(morganMiddleware);
 
 // routes configuration
 app.use('/', rootRoute);
 
 // server starting
 app.listen(process.env.PORT, () =>
-  console.log('servidor corriendo en el puerto ' + process.env.PORT)
+  Logger.info('servidor corriendo en el puerto ' + process.env.PORT)
 );
